@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+// MIXIN 1: Flex Center
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+// MIXIN 2: Card Shadow (Neon Glow)
+@mixin card-shadow($intensity: 20px, $color: $neon-red) {
+    box-shadow: 0 0 $intensity with-opacity($color, 0.4);
+}
+
+// MIXIN 3: Responsive (mobile-first)
+@mixin responsive($bp) {
+    @if $bp == sm {
+        @media (min-width: $bp-sm) { @content; }
+    } @else if $bp == md {
+        @media (min-width: $bp-md) { @content; }
+    } @else if $bp == lg {
+        @media (min-width: $bp-lg) { @content; }
+    } @else if $bp == xl {
+        @media (min-width: $bp-xl) { @content; }
+    }
+}
+
+// MIXIN 4: Neon Text
+@mixin neon-text($color: $neon-red, $intensity: 15px) {
+    text-shadow: 0 0 $intensity $color;
+}

@@ -1,0 +1,29 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+    display: inline-block;
+    font-family: $font-retro;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &--primary {
+        padding: $sp-md 5rem;
+        background-color: transparent;
+        font-size: 2.2rem;
+        color: $neon-red;
+        letter-spacing: 0.4rem;
+        border: 3px solid $neon-red;
+        margin-top: 2.5rem;
+        width: 100%;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $neon-red;
+            color: $white;
+            box-shadow: 0 0 30px $neon-red, inset 0 0 10px rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.7rem;
+            transform: translateY(-5px);
+        }
+    }
+}

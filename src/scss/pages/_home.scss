@@ -1,0 +1,43 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+// =========================================
+// SECTION — Layout halaman utama
+// =========================================
+.section {
+    @extend %section-base;
+
+    &__title {
+        text-align: center;
+        margin-bottom: $sp-xl;
+    }
+}
+
+// =========================================
+// ARTICLE — Blok konten
+// =========================================
+.article {
+    max-width: 850px;
+    width: 100%;
+
+    &__title {
+        margin-top: $sp-lg;
+    }
+
+    ul {
+        margin-left: 2.5rem;
+        margin-top: $sp-sm;
+        list-style-type: square;
+    }
+
+    li {
+        font-size: 1.8rem;
+        line-height: 1.8;
+
+        &::marker {
+            color: $neon-red;
+            font-size: 2.2rem;
+        }
+    }
+}

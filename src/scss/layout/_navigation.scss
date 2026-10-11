@@ -1,0 +1,58 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.nav {
+    display: flex;
+    gap: 5rem;
+
+    &__link {
+        font-size: 2rem;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        position: relative;
+        padding: $sp-xs 0;
+        transition: 0.3s ease;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background-color: $neon-red;
+            box-shadow: 0 0 10px $neon-red;
+            transition: 0.3s ease;
+        }
+
+        &:hover {
+            color: $neon-red;
+            @include neon-text($neon-red, 10px);
+
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Mobile
+@media (max-width: #{$bp-lg - 1}) {
+    .nav {
+        flex-direction: column;
+        gap: 0;
+        background-color: $surface-bg;
+        border: 2px solid $border-color;
+        border-left: 8px solid $neon-red;
+        width: 100%;
+        margin-top: $sp-md;
+        padding: $sp-md;
+
+        &__link {
+            display: block;
+            font-size: 2.5rem;
+            margin: $sp-md 0;
+        }
+    }
+}

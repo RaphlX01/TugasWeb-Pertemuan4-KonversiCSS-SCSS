@@ -1,0 +1,57 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placeholders' as *;
+
+.form {
+    background-color: $surface-bg;
+    padding: 5rem;
+    border: 2px solid $border-dark;
+    border-top: 8px solid $neon-red;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 20px with-opacity($neon-red, 0.1);
+    margin-top: $sp-md;
+    width: 100%;
+    max-width: 850px;
+
+    &__group {
+        margin-bottom: $sp-md;
+        text-align: left;
+    }
+
+    &__label {
+        font-size: 1.8rem;
+        letter-spacing: 0.2rem;
+        color: #ccc;
+    }
+
+    &__input,
+    &__textarea {
+        width: 100%;
+        padding: 1.8rem;
+        margin-top: 1.2rem;
+        background-color: $black;
+        border: 2px solid $border-color;
+        color: $white;
+        font-size: 1.6rem;
+        font-family: $font-retro;
+        font-weight: 500;
+        transition: 0.3s ease;
+
+        &:focus {
+            @extend %focus-neon;
+        }
+    }
+
+    input[type="color"] {
+        padding: $sp-xs;
+        height: 60px;
+        cursor: pointer;
+    }
+
+    input[type="range"] {
+        accent-color: $neon-red;
+    }
+
+    @media (max-width: #{$bp-lg - 1}) {
+        padding: $sp-md;
+    }
+}

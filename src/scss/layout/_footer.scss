@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as *;
+
+.footer {
+    padding: $sp-lg 9%;
+    background-color: $surface-bg;
+    border-top: 2px solid $border-dark;
+    margin-top: $sp-2xl;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+    text-align: center;
+
+    p, small {
+        font-size: 1.6rem;
+        color: $text-muted;
+        letter-spacing: 0.15rem;
+        font-weight: 500;
+    }
+}

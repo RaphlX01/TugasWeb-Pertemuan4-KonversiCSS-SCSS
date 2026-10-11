@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+    padding: 2.5rem 9%;
+    background: with-opacity($dark-bg, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 3px solid $neon-red;
+    @include card-shadow(20px);
+    @include flex-center(column);
+    position: sticky;
+    top: 0;
+    z-index: $z-sticky;
+
+    &__title {
+        font-size: 4.5rem;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        text-shadow: 4px 4px 0 $neon-red, 0 0 15px $neon-red;
+        transition: 0.3s ease;
+
+        &:hover {
+            transform: skewX(-15deg) scale(1.05);
+            text-shadow: 6px 6px 0 $neon-red, 0 0 30px $neon-red;
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.6rem;
+        color: $text-dim;
+        margin: $sp-sm 0 $sp-md;
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,23 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Placeholder: Section dasar
+%section-base {
+    min-height: 100vh;
+    padding: $sp-2xl 9% $sp-xl;
+    @include flex-center(column);
+}
+
+// Placeholder: Bordered box
+%bordered-box {
+    background-color: $surface-bg;
+    border: 2px solid $border-color;
+    border-left: 8px solid $neon-red;
+}
+
+// Placeholder: Focus neon
+%focus-neon {
+    border-color: $neon-red;
+  box-shadow: inset 8px 0 0 $neon-red, 0 0 15px with-opacity($neon-red, 0.3);
+    background-color: $form-bg;
+}

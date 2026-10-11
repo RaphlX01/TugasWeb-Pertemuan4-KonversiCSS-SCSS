@@ -1,0 +1,32 @@
+// =========================================
+// MAIN.SCSS — Entry Point (7-1 Pattern)
+// =========================================
+
+// 1. ABSTRACTS (no CSS output)
+@use 'abstracts/variables';
+@use 'abstracts/functions';
+@use 'abstracts/mixins';
+@use 'abstracts/placeholders';
+
+// 2. VENDORS (third-party)
+@use 'vendors/normalize';
+
+// 3. BASE
+@use 'base/reset';
+@use 'base/typography';
+
+// 4. LAYOUT
+@use 'layout/header';
+@use 'layout/navigation';
+@use 'layout/footer';
+
+// 5. COMPONENTS
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/media';
+
+// 6. PAGES
+@use 'pages/home';
+
+// 7. THEMES
+@use 'themes/default';

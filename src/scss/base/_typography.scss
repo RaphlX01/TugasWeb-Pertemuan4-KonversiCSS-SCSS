@@ -1,0 +1,77 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// =========================================
+// @EACH LOOP — Generate style heading
+// =========================================
+$headings: (
+    'h1': 4.5rem,
+    'h2': 6.5rem,
+    'h3': 3.2rem
+);
+
+@each $tag, $size in $headings {
+    #{$tag} {
+        font-family: $font-retro;
+        font-size: $size;
+        color: $white;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        @include neon-text($neon-red, 15px);
+    }
+}
+
+// h2 — khusus stroke
+h2 {
+    color: transparent;
+    -webkit-text-stroke: 3px $neon-red;
+    letter-spacing: 0.8rem;
+    margin-bottom: $sp-xl;
+    text-shadow: 0 0 25px with-opacity($neon-red, 0.3);
+}
+
+// h3 — khusus border
+h3 {
+    margin: $sp-lg 0 $sp-md;
+    border-left: 8px solid $neon-red;
+    padding-left: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+p, li, figcaption {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+strong, em {
+    color: $neon-red;
+    font-style: normal;
+    font-weight: 600;
+    text-shadow: 0 0 5px with-opacity($neon-red, 0.4);
+}
+
+a {
+    color: $neon-red;
+    transition: 0.3s ease;
+    text-decoration: underline;
+    text-decoration-color: with-opacity($neon-red, 0.3);
+    text-underline-offset: 4px;
+
+    &:hover {
+        color: $white;
+        text-decoration-color: $neon-red;
+        @include neon-text($neon-red, 10px);
+    }
+}
+
+// @FOR LOOP — Utility margin
+@for $i from 1 through 3 {
+    .mt-#{$i} {
+        margin-top: $sp-sm * $i;
+    }
+    .mb-#{$i} {
+        margin-bottom: $sp-sm * $i;
+    }
+}

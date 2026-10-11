@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as *;
+
+// =========================================
+// THEME DEFAULT (Hotline Miami vibe)
+// =========================================
+:root {
+    --neon-red: #{$neon-red};
+    --dark-bg: #{$dark-bg};
+    --surface-bg: #{$surface-bg};
+    --text-main: #{$text-main};
+    --font-retro: #{$font-retro};
+}
